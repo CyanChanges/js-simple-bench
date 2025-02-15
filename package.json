@@ -4,6 +4,7 @@
     "compile:v8": "cd v8 && cargo build --release",
     "compile": "bun run compile:v8 && bun run compile:jsc",
     "bench:engines": "hyperfine 'bun ./bench.ts jsc' 'bun ./bench.ts v8' --warmup=100",
-    "bench:runtimes": "hyperfine 'bun ./test.js' 'deno -R ./test.js' 'node ./test.js' --warmup=100"
+    "bench:runtimes": "hyperfine 'deno -R ./sha256.js' 'bun ./sha256.js' 'node ./sha256.js' --warmup=100",
+    "bench:runtimes:hash": "hyperfine 'deno -R ./test.js' 'bun ./test.js' 'node ./test.js' --warmup=100"
   }
 }

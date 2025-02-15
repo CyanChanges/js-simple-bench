@@ -48,3 +48,13 @@ deno task bench:runtimes
 # Bun
 bun run bench:runtimes
 ```
+
+#### Benchmark node:crypto hasher
+
+```shell
+# Deno
+deno task bench:runtimes:hash
+
+# Bun
+bun run bench:runtimes:hash
+```
