@@ -1,5 +1,12 @@
 # Benchmarks
 
+> [!WARNING]
+> These benchmarks may not represent a real-world scenario.
+>
+
+Simple JavaScript Benchmarks.
+For Engines (V8, JavaScriptCore), and Runtimes (Deno, Bun, Node.js)
+
 ## Requirements
 Have `bun` or `deno` installed,
 Have Rust toolchains ready (`cargo`)

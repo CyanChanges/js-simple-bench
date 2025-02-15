@@ -36,6 +36,8 @@ switch (engine) {
 console.log('Engine at', engine_file)
 
 const code = `
+    // Code modified from https://gist.github.com/rumkin/fa728e5a6b28625f53db
+
     /**
      * SHA-256 hash function reference implementation.
      *
@@ -51,7 +53,6 @@ const code = `
      * @returns {string} Hash of msg as hex character string
      */
     Sha256.hash = function(numArray) {
-        // convert string to UTF-8, as SHA only deals with byte-streams
         msg = numArray;
         
         // constants [§4.2.2]
@@ -164,30 +165,7 @@ const code = `
         return s;
     };
     
-    
-    /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
-    
-    
-    /** Extend String object with method to encode multi-byte string to utf8
-     *  - monsur.hossa.in/2012/07/20/utf-8-in-javascript.html */
-    if (typeof String.prototype.utf8Encode == 'undefined') {
-        String.prototype.utf8Encode = function() {
-            return unescape( encodeURIComponent( this ) );
-        };
-    }
-    
-    /** Extend String object with method to decode utf8 string to multi-byte */
-    if (typeof String.prototype.utf8Decode == 'undefined') {
-        String.prototype.utf8Decode = function() {
-            try {
-                return decodeURIComponent( escape( this ) );
-            } catch (e) {
-                return this; // invalid UTF-8? return as-is
-            }
-        };
-    }
-
-    Sha256.hash(Array.from({ length: 500000 }, (i, _) => i))
+    Sha256.hash(Array.from(Array(500000).keys()))
 `
 
 
