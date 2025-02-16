@@ -24,6 +24,9 @@ var GeneratorFunction = function* () {
 }.constructor;
 var AsyncGeneratorFunction = async function* () {
 }.constructor;
+function do_not_optimize(v) {
+  $._ = v;
+}
 var $ = { _: null, __() {
   return print($._);
 } };
@@ -1973,8 +1976,9 @@ var $2 = {
 // tests/for_of.js
 bench("for-of loop", () => {
   let acc = 0;
-  for (const el of Array.from({ length: 1e4 }, () => Math.random())) {
+  for (const el of Array.from({ length: 1e6 }, (i) => i)) {
     acc += el;
   }
+  do_not_optimize(acc);
 });
 await run({ format: "json" });

@@ -227,9 +227,11 @@ bench("sha256 (js)", () => {
     const r = Sha256.hash(
       Array.from(Array(100000).keys(), (i, _) => i ^ key),
     );
+    do_not_optimize(r);
     // if (typeof print !== "undefined") print(r);
     arr.push(r);
   }
+  do_not_optimize(arr);
 });
 
 await run({

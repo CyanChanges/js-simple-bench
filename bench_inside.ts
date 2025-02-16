@@ -25,7 +25,8 @@ function log(content: string, sym: string = "*") {
 
 function bannerHeader(header: string) {
   bannerLayer++;
-  const def = (process.stdout.columns ?? 20) - 2 - 9 - Bun.stringWidth(header);
+  const def = (process.stdout.columns ?? 20) - 2 -
+    Bun.stringWidth(String(header));
   const mid = Math.floor(
     def / 2,
   );
@@ -85,9 +86,7 @@ defaults(opts);
 log("Starting Benchmark...");
 
 for await (const test of new Bun.Glob("**/*.js").scan(DIST)) {
-  bannerHeader();
-
-  log(test.substring(0, test.lastIndexOf(".")), "@");
+  bannerHeader(test.substring(0, test.lastIndexOf(".")));
 
   let ctx;
   let benchmarks = [];

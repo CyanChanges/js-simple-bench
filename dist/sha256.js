@@ -24,6 +24,9 @@ var GeneratorFunction = function* () {
 }.constructor;
 var AsyncGeneratorFunction = async function* () {
 }.constructor;
+function do_not_optimize(v) {
+  $._ = v;
+}
 var $ = { _: null, __() {
   return print($._);
 } };
@@ -2135,8 +2138,10 @@ bench("sha256 (js)", () => {
   const arr = [];
   for (const key of [12345, 678910, 114514, 1919810]) {
     const r = Sha256.hash(Array.from(Array(1e5).keys(), (i, _) => i ^ key));
+    do_not_optimize(r);
     arr.push(r);
   }
+  do_not_optimize(arr);
 });
 await run({
   format: "json"
