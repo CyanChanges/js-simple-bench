@@ -221,7 +221,7 @@ Sha256.toHexStr = function (n) {
   return s;
 };
 
-bench("sha256", () => {
+bench("sha256 (js)", () => {
   const arr = [];
   for (const key of [12345, 678910, 114514, 1919810]) {
     const r = Sha256.hash(

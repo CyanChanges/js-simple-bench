@@ -1,6 +1,12 @@
 import fs from "node:fs";
 import commands from "./run.ts";
-import { $, COLLECTIONS, defaults, mitata } from "./mitata_fmt.ts";
+import {
+  $,
+  COLLECTIONS,
+  defaults,
+  mitata,
+  reset_collections,
+} from "./mitata_fmt.ts";
 
 const ROOT = import.meta.dir + "/";
 const TESTS = ROOT + "tests/";
@@ -71,4 +77,6 @@ for (const test of new Bun.Glob("**/*.js").scanSync(DIST)) {
   });
 
   await mitata(ctx, opts, benchmarks);
+
+  reset_collections();
 }

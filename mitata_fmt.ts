@@ -2,6 +2,10 @@ import { flags } from 'mitata'
 
 export let COLLECTIONS = [{ id: 0, name: null, types: [], trials: [] }];
 
+export function reset_collections() {
+  COLLECTIONS = [{ id: 0, name: null, types: [], trials: [] }];
+}
+
 export let $counters = await import('@mitata/counters').catch(()=>null);
 
 export { flags }
