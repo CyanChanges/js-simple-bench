@@ -222,10 +222,10 @@ Sha256.toHexStr = function (n) {
 const arr = [];
 for (const key of [12345, 678910, 114514, 1919810]) {
   const r = Sha256.hash(
-    Array.from(Array(30000).keys(), (i, _) => i ^ key),
+    Array.from(Array(100000).keys(), (i, _) => i ^ key),
   );
   if (typeof console !== "undefined") console?.log?.(r);
   arr.push(r);
 }
 
-r;
+arr;

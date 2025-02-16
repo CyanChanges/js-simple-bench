@@ -1,0 +1,18 @@
+{
+  "version": "4",
+  "specifiers": {
+    "npm:mitata@^1.0.34": "1.0.34"
+  },
+  "npm": {
+    "mitata@1.0.34": {
+      "integrity": "sha512-Mc3zrtNBKIMeHSCQ0XqRLo1vbdIx1wvFV9c8NJAiyho6AjNfMY8bVhbS12bwciUdd1t4rj8099CH3N3NFahaUA=="
+    }
+  },
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:mitata@^1.0.34"
+      ]
+    }
+  }
+}
