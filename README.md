@@ -25,16 +25,26 @@ deno task compile
 
 ## Benchmarks
 
-### **Engines Benchmark**
+### **Engines Benchmark (Inside)**
+
+**V8** VS **JavaScriptCore**
+
+```shell
+bun run bench:engines
+
+# todo: Deno support
+```
+
+### **Engines Benchmark (Inside)**
 
 **V8** VS **JavaScriptCore**
 
 ```shell
 # Deno
-deno task bench:engines
+deno task bench:engines:out
 
 # Bun
-bun run bench:engines
+bun run bench:engines:out
 ```
 
 ### **Runtimes Benchmark**

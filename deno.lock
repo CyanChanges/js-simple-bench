@@ -11,6 +11,7 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@types/bun@^1.2.2",
         "npm:mitata@^1.0.34"
       ]
     }

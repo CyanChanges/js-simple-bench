@@ -29,7 +29,7 @@ async function go(engine_file: string, code: string) {
     writer.close();
     await child.status;
   } else {
-    return new Promise((res, rej) => {
+    return new Promise<void>((res, rej) => {
       const child = spawn(engine_file, [], {
         stdio: ["pipe", "ignore", "ignore"],
       });

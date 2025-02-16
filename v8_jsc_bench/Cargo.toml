@@ -1,0 +1,8 @@
+[package]
+name = "v8_jsc_bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+javascriptcore = "0.0.6"
+v8 = "134.4.0"

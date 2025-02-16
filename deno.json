@@ -3,7 +3,7 @@
     "compile:jsc": "cd jsc && cargo build --release",
     "compile:v8": "cd v8 && cargo build --release",
     "compile": "deno task compile:v8 && deno task compile:jsc",
-    "bench:engines": "deno -RE --allow-sys --allow-run ./bench.ts",
+    "bench:engines:out": "deno -RE --allow-sys --allow-run ./bench.ts",
     "bench:runtimes": "hyperfine 'deno -R ./sha256.js' 'bun ./sha256.js' 'node ./sha256.js' --warmup=100",
     "bench:runtimes:hash": "hyperfine 'deno -R ./test.js' 'bun ./test.js' 'node ./test.js' --warmup=100"
   }
