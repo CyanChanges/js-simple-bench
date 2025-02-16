@@ -1973,7 +1973,14 @@ var $2 = {
   }
 };
 
-// tests/for_of.js
+// tests/for_loop.js
+bench("for loop", () => {
+  let acc = 0;
+  for (let index = 0;index < 1e6; index++) {
+    acc += index;
+  }
+  do_not_optimize(acc);
+});
 bench("for-of loop", () => {
   let acc = 0;
   for (const el of Array.from({ length: 1e6 }, (i) => i)) {
